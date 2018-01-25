@@ -1,0 +1,41 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Paul
+ * Date: 22/01/2018
+ * Time: 22:13
+ */
+$MyChars = $block->getMyChars();
+?>
+<form class="form" action="download" method="post">
+<div class="selector_wrapper">
+    <?php
+    foreach($MyChars as $SWCharacter){
+        ?>
+        <div class="name_card_selected" data-charname="<?php echo $SWCharacter['name']; ?>">
+            <div class="image"></div>
+            <div class="charname">
+                <p><?php echo $SWCharacter['name']; ?></p>
+            </div>
+            <div class="attributes">
+                Height: <?php echo $SWCharacter['height']; ?>
+            </div>
+            <div class="attributes">
+                Mass: <?php echo $SWCharacter['mass']; ?>
+            </div>
+        </div>
+        <?php
+        foreach($SWCharacter AS $SWCharKey =>$SWCharVal ) {
+            if(is_string ($SWCharVal )){
+                ?>
+                <input type="hidden" name="<?php echo $SWCharKey; ?>[]" value="<?php echo $SWCharVal; ?>">
+                <?php
+            }
+        }
+        ?>
+    <?php }?>
+</div>
+<div class="button_wrapper">
+    <button class="download_data" type="submit">Download Data</button>
+</div>
+</form>

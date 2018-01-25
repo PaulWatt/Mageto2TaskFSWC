@@ -1,0 +1,132 @@
+.name_card,.name_card_selected {
+    width:260px;
+    height:120px;
+    padding:0 10px 10px;
+    border:1px solid #fff;
+    margin:0 10px 25px;
+    -webkit-box-shadow:1px 4px 4px 3px #b1a992;
+    box-shadow:1px 4px 4px 3px #b1a992
+}
+
+.name_card:hover {
+    cursor:pointer
+}
+
+.name_card.charselected .image::after,.name_card_selected .image::after {
+    -moz-osx-font-smoothing:grayscale;
+    font-size:70px;
+    line-height:24px;
+    color:#006400;
+    content:'\e60e';
+    font-family:'luma-icons';
+    left:-30px;
+    top:50px;
+    position:relative;
+    text-align:center
+}
+
+.name_card:hover.charselected .image::after {
+    -moz-osx-font-smoothing:grayscale;
+    font-size:70px;
+    line-height:24px;
+    color:#006400;
+    content:'\e60e';
+    font-family:'luma-icons';
+    left:-30px;
+    top:50px;
+    position:relative;
+    text-align:center
+}
+
+.name_card:hover .image::after {
+    -moz-osx-font-smoothing:grayscale;
+    font-size:70px;
+    line-height:24px;
+    color:#CCC;
+    content:'\e60e';
+    font-family:'luma-icons';
+    left:-30px;
+    top:50px;
+    position:relative;
+    text-align:center
+}
+
+.attributes {
+    text-align:left;
+    float:left;
+    width:65%;
+    margin-bottom:1rem
+}
+
+.charname>p {
+    text-align:left;
+    float:left;
+    width:75%;
+    margin-top:1rem;
+    margin-bottom:1rem;
+    font-weight:700;
+    font-size:20px
+}
+
+.image {
+    float:right;
+    width:25%;
+    height:auto
+}
+
+.name_card .image:after {
+    -moz-osx-font-smoothing:grayscale;
+    font-size:70px;
+    line-height:24px;
+    color:#6e716e;
+    content:'\e627';
+    font-family:'luma-icons';
+    left:-30px;
+    top:50px;
+    position:relative;
+    text-align:center
+}
+
+.confirm_selection,.download_data {
+    color:#fff;
+    background-color:#006400;
+    width:80%;
+    line-height:50px;
+    font-size:24px
+}
+
+.selector_wrapper {
+    display:flex;
+    display:-webkit-flex;
+    flex-wrap:wrap;
+    -webkit-flex-wrap:wrap;
+    justify-content:center;
+    -webkit-justify-content:center
+}
+
+.button_wrapper {
+    float:left;
+    clear:both;
+    text-align:center;
+    width:100%;
+    padding:auto
+}
+
+.status_message>p {
+    text-align:center!important;
+    font-style:italic;
+    font-weight:700;
+    font-size:20px
+}
+
+.selected_chars>p {
+    text-align:center;
+    font-style:italic;
+    font-weight:700;
+    font-size:20px
+}
+
+.page-title {
+    font-weight:700;
+    font-size:32px
+}

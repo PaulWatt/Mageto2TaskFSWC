@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <head>
+        <css src="MMGroup_FavStarWarsChars/css/selections.css"/>
+        <link src="MMGroup_FavStarWarsChars/js/selections.js"/>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Select your three favourite characters</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="MMGroup\FavStarWarsChars\Block\Favstarwarschars" name="favstarwarschars" template="MMGroup_FavStarWarsChars::favstarwarschars.phtml">
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,49 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Paul
+ * Date: 21/01/2018
+ * Time: 22:16
+ */
+$StarWarsResults = $block->getStarWarsChars();
+$StarWarsChars = array_slice($StarWarsResults['results'],0,9);
+?>
+
+<form class="form" action="../mychars" method="post">
+    <div class="selector_wrapper">
+        <?php
+        foreach($StarWarsChars as $SWCharacter){
+            $SWCharURL = explode("/",$SWCharacter['url']);
+            $SWCharId = $SWCharURL[count($SWCharURL )-2];
+            ?>
+        <div class="name_card" data-swcharid="<?php echo $SWCharId;?>" data-charname="<?php echo $SWCharacter['name']; ?>" data-charselected="">
+            <input type="hidden" name="swcharid[]" value="<?php echo $SWCharId;?>" disabled="disabled" >
+            <div class="image"></div>
+            <div class="charname">
+                <p><?php echo $SWCharacter['name']; ?></p>
+            </div>
+            <div class="attributes">
+                Height: <?php echo $SWCharacter['height']; ?>
+            </div>
+            <div class="attributes">
+                Mass: <?php echo $SWCharacter['mass']; ?>
+            </div>
+            <?php
+            foreach($SWCharacter AS $SWCharKey =>$SWCharVal ) {
+                if(is_string ($SWCharVal )){
+                    ?>
+                    <input type="hidden" name="<?php echo $SWCharKey; ?>[]" value="<?php echo $SWCharVal; ?>" disabled="disabled" >
+                    <?php
+                }
+            }
+            ?>
+        </div>
+        <?php
+        }?>
+</div>
+    <div class="button_wrapper">
+    <div class="status_message"><p></p></div>
+    <div class="selected_chars"><p></p></div>
+    <button class="confirm_selection disabled" type="submit">Confirm Selection</button>
+</div>
+</form>
